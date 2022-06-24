@@ -10,7 +10,7 @@ RUN apt-get install -y nodejs
 COPY ./*.csproj .
 RUN dotnet restore
 
-# copy everything else and build app
+# copy everything else and build app.
 COPY . .
 WORKDIR /build
 RUN dotnet publish -c release -o published --no-cache
