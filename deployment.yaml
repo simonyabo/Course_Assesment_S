@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simonapp02
+spec:
+  selector:
+    matchLabels:
+      app: simonapp02
+  template:
+    metadata:
+      labels:
+        app: simonapp02
+    spec:
+      containers:
+      - name: simonapp02
+        image: sbacr02.azurecr.io/simonapp02:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5178
